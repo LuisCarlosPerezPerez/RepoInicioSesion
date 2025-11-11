@@ -4,7 +4,7 @@ const { MongoClient } = require('mongodb');
 const app = express();
 const port = 80;
 
-const uri = `mongodb://${process.env.USUARIO_MONGO}:${process.env.CONTRASENA_MONGO}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`;
+const uri = `mongodb://${process.env.USUARIO_MONGO}:${process.env.CONTRASENA_MONGO}@${process.env.MONGOHOST}`;
 
 // Create a MongoClient instance
 const client = new MongoClient(uri);
