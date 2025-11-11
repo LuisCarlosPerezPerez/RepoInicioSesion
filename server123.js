@@ -2,7 +2,7 @@ const express = require('express');
 const { MongoClient } = require('mongodb');
 
 const app = express();
-const port = 80;
+const port = 3000;
 
 const uri = `mongodb://${process.env.USUARIO_MONGO}:${process.env.CONTRASENA_MONGO}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`;
 
@@ -15,7 +15,7 @@ async function main() {
     await client.connect();
 
     // Select database and collection
-    const db = client.db('ClientesSorteo');
+    const db = client.db('mydatabase');
     const collection = db.collection('users');
 
     // Middleware to parse JSON
