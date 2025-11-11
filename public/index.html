@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Ejemplo</title>
+</head>
+<body>
+    <button onclick="fetchUsers()">Obtener Usuarios</button>
+
+    <form onsubmit="postUser(); return false;">
+        <input type="text" id="name" placeholder="Nombre" required />
+        <input type="text" id="email" placeholder="Email" required />
+        <button type="submit">Añadir Usuario</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="get_users.js"></script>
+    <script src="post_user.js"></script>
+</body>
+</html>
