@@ -1,21 +1,50 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Ejemplo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
-    <button onclick="fetchUsers()">Obtener Usuarios</button>
-
-    <form onsubmit="postUser(); return false;">
-        <input type="text" id="name" placeholder="Nombre" required />
-        <input type="text" id="email" placeholder="Email" required />
-        <button type="submit">Añadir Usuario</button>
-    </form>
-
-    <div id="result"></div>
+    <div id="contenedor" style="visibility: visible;">
+        <form onsubmit="postUser(); return false;">
+            <table>
+                <thead>
+                    <tr>
+                        <td><h3>Sorteo de Ave Exótica</h3></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><img src="fondo_form.jpg" alt="ns" width="500" height="200"></td></tr>
+                    <tr><td><label for="nombre">Nombre</label></td></tr>
+                    <tr><td><input type="text" id="nombre" name="nombre" placeholder="Nombre" required></td></tr>
+                    <tr><td><label for="apellido">Apellido</label></td></tr>
+                    <tr><td><input type="text" id="apellido" name="apellido" placeholder="Apellido" required></td></tr>
+                    <tr><td><label for="correo">Correo Electrónico</label></td></tr>
+                    <tr><td><input type="email" id="correo" name="correo" placeholder="Correo" required></td></tr>
+                    <tr><td><label for="fechanac">Fecha de nacimiento</label></td></tr>
+                    <tr><td><input type="date" id="fechanac" name="fechanac" placeholder="fechanac" required></td></tr>
+                    <tr><td><label for="telefono">Número de Teléfono</label></td></tr>
+                    <tr><td><input type="tel" id="telefono" name="telefono" placeholder="telefono" required></td></tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="checkbox" required>  
+                            Aceptas nuestras politicas de privacidad, nuestros terminos y condiciones 
+                            y las cookies de nuestra página
+                        </td>
+                    </tr>
+                    <tr><td><button type="submit">Confirmar</button></td></tr>
+                </tfoot>
+            </table>
+        </form>
+    </div>
 
     <script src="get_users.js"></script>
     <script src="post_user.js"></script>
-</body>
+    <script src="Sortear.js"></script>
+    <script src="cookie.js"></script>
+    </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ganador del Sorteo</title>
+</head>
+<body>
+
+<h1>GANADOR DEL SORTEO</h1>
+<div id="ganador"></div>
+<button type="button" onclick="DescargarExcel()">Descargar Excel</button>
+
+<script src="excel.js"></script>
+<script>
+    async function mostrarGanador() {
+        const res = await fetch('/ganador');
+        const ganador = await res.json();
+
+        document.getElementById("ganador").innerHTML = `
+            <h2>${ganador.nombre} ${ganador.apellido}</h2>
+            <p>Correo: ${ganador.correo}</p>
+            <p>Teléfono: ${ganador.telefono}</p>
+            <p>Fecha de nacimiento: ${ganador.fechanac}</p>
+        `;
+    }
+
+    mostrarGanador();
+ async function DescargarExcel(){
+    const res1 = await fetch('/users');
+    const participantes = await res1.json();
+    DownloadJSON2CSV(participantes);
+}
+</script>
+
+</body>
+</html>

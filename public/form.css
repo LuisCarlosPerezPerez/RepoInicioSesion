@@ -1,0 +1,29 @@
+#contenedor{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+}
+table {
+    background-color: rgb(182, 232, 112);
+    border: 5px solid blue;        
+    border-collapse: collapse;     
+    border-radius: 10px;          
+    overflow: hidden;              
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+td {
+    padding: 10px;                
+}
+thead{
+    display: flex;
+    justify-content: center;
+    
+}
+#nombre,#apellido,#correo,#fechanac,#telefono{
+    width: 100%;
+}
+body{
+    background-color: rgb(164, 255, 255);
+}

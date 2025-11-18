@@ -17,6 +17,7 @@ async function main() {
     // Select database and collection
     const db = client.db('ClientesSorteo');
     const collection = db.collection('users');
+    const winnerCollection = db.collection('Ganador');
 
     // Middleware to parse JSON
     app.use(express.json());
@@ -35,6 +36,19 @@ async function main() {
       const newUser = req.body;
       await collection.insertOne(newUser);
       res.json({ message: 'User added successfully', user: newUser });
+    });
+
+    //Añadir Ganador
+    app.post('/ganador', async (req, res) => {
+      const ganador = req.body;
+      await winnerCollection.insertOne(ganador);
+      res.json({ message: "Ganador guardado correctamente", ganador });
+    });
+
+    //obtener ganador
+     app.get('/ganador', async (req, res) => {
+      const ganador = await winnerCollection.findOne({}, { sort: { _id: -1 } });
+      res.json(ganador);
     });
 
     // Start server
