@@ -2,7 +2,7 @@ async function main() {
 
     // Fecha y hora del sorteo
     // Modifica esta para ajustar la hora de el sorteo estan ordenados por año,mes,dia,hora,minutos,segundos
-    const fechaSorteo = new Date("2025-11-26T12:20:00");
+    const fechaSorteo = new Date("2025-11-24T12:20:00");
     // Hora actual
     const ahora = new Date();
 
